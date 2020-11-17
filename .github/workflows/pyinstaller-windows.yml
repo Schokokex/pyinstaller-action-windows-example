@@ -13,6 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      
+    - run: apt update && apt install python3-pip && pip3 install PyInstaller && cd src && pyi-makespec main.py && cd ..
+      
     - name: PyInstaller Windows
       uses: JackMcKew/pyinstaller-action-windows@main
       with:
